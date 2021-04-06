@@ -1,4 +1,4 @@
-function maxSubarraySum(arr, len){
+function maxSubArraySum(arr, len){
   // define window tempSum and maxSum
   let tempSum = arr.slice(0, len).reduce((a,b) => a + b);
   let maxSum = tempSum;
@@ -14,5 +14,5 @@ function maxSubarraySum(arr, len){
   return maxSum;
 }
 
-console.log(maxSubarraySum([100,200,300,400], 2));
+console.log(maxSubArraySum([100,200,300,400], 2));
 // console.log(maxSubarraySum([1,3],3))
