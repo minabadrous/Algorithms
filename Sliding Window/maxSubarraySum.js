@@ -1,9 +1,6 @@
 function maxSubarraySum(arr, len){
   // define window tempSum and maxSum
-  let tempSum = arr[0];
-  for(let i=1; i<=len-1; i++){
-    tempSum += arr[i];
-  }
+  let tempSum = arr.slice(0, len).reduce((a,b) => a + b);
   let maxSum = tempSum;
 
   // loop until length
