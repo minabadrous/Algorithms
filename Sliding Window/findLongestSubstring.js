@@ -1,42 +1,21 @@
 function findLongestSubstring(string){
-  // grap an index, loop the string after it, storing charachters met, 
-  // untill meeting an existing charachter, compare the temp and max length,
-  // then start with the next index
 
-  // grap an index
-  let index = 0;
-  // have a lookup to store charachters
-  let lookup = {};
+  // declare start point, seen object and longest length
+  let start = 0;
+  let seen = {};
+  let longest = 0;
 
-  // start a temp and max length
-  let tempLen = 0;
-  let maxLen = 0;
+  for(let i=0; i<string.length; i++){
+    let char = string[i];
+    if(seen[char]) start = Math.max(start, seen[char]);
 
-  // loop a substring
-  while(index < string.length){
-    // found existing character
-    if(lookup[string[index]]){
-      
-      // temp len is bigger
-      if(tempLen > maxLen){
-        maxLen = tempLen;
-      }
-
-      // reset lookup
-      lookup = {};
-      index = index - tempLen + 1;
-      tempLen = 0;
-    }
-
-    // didn't find a match
-    else {
-      lookup[string[index]] = 1;
-      tempLen++;
-      index++;
-    }
+    // check longest
+    longest = Math.max(longest, i - start + 1);
+    // update seen
+    seen[char] = i + 1;
   }
 
-  return tempLen > maxLen ? tempLen : maxLen;
+  return longest;
 }
   
   // console.log(findLongestSubstring('rithmschool'))
