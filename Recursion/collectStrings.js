@@ -1,23 +1,13 @@
-const collectStrings = obj => {
+const collectStrings = obj =>
+    
+    [].concat(Object.values(obj)
+    .map(value => {
+        return typeof value === 'string'
+        ? value
+        : collectStrings(value)
+    }))
+    .reduce((acc, val) => acc.concat(val), []);
 
-    Object.keys(obj).forEach((key, index)=> {
-        let value = obj[key];
-        let arr = [];
-
-        if(typeof value === 'object' && value !== null && !Array.isArray(value)){
-            return collectStrings(value)
-        }
-
-        else if(typeof value === 'string'){
-            arr.push(value)
-            console.log(value, arr)
-        }
-
-        return arr;
-    })
-
-    return [].concat(collectStrings(obj))
-}
 
 
 const obj = {
@@ -35,5 +25,7 @@ const obj = {
         }
     }
 }
+
+
 
 console.log(collectStrings(obj)) // ["foo", "bar", "baz"])
