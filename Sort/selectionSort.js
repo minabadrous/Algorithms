@@ -8,7 +8,8 @@ const selectionSort = toSort => {
                 min = j;
             }
         }
-        [sorted[min], sorted[i]] = [sorted[i], sorted[min]];
+        if(sorted[i] !== sorted[min]){
+        [sorted[min], sorted[i]] = [sorted[i], sorted[min]];}
     }
 
     return sorted;
