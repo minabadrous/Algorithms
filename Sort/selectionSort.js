@@ -1,18 +1,16 @@
-const selectionSort = toSort => {
-    let sorted = toSort;
-
-    for(let i=0; i<sorted.length; i++){
+const selectionSort = arr => {
+    for(let i=0; i<arr.length; i++){
         let min = i;
-        for(let j=i; j<sorted.length; j++){
-            if(sorted[j] < sorted[min]){
-                min = j;
-            }
+
+        for(let j=i+1; j<arr.length; j++){
+            if(arr[j] < arr[min]) min = j;
         }
-        if(sorted[i] !== sorted[min]){
-        [sorted[min], sorted[i]] = [sorted[i], sorted[min]];}
+
+        [arr[i], arr[min]] = [arr[min], arr[i]];
+
     }
 
-    return sorted;
+    return arr;
 }
 
-console.log(selectionSort([5,7,2,9,4,3]))
+console.log(selectionSort([5,7,2,9,4,3]));
