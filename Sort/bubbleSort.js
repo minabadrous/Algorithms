@@ -1,19 +1,18 @@
 const bubbleSort = arr => {
-    let sorted = arr;
-    let stillSorting = false;
+    let sorted = true;
 
-    for(let i=sorted.length-1; i>=0; i--){
+    for(let i=arr.length; i>0; i--){
         for(let j=0; j<i; j++){
-            if(sorted[j] > sorted[j+1]){
-                if(j > 0) stillSorting = true;
-                [sorted[j], sorted[j+1]] = [sorted[j+1], sorted[j]];
+            if(arr[j] > arr[j+1]){
+                [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+                sorted = false;
             }
         }
-        if(!stillSorting) return sorted
-        else stillSorting = false;
+        if(sorted) break;
+        else sorted = true;
     }
 
-    return sorted;
+    return arr;
 }
 
 console.log(bubbleSort([10,2,17,8,0,2]))
