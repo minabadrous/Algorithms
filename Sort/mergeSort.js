@@ -26,7 +26,6 @@ const mergeSort = arr => {
     return merge(left, right)
 }
 
-// Array.from({length: 40}, () => Math.floor(Math.random() * 40))
-let data = Array.from({length: 40000}, () => Math.floor(Math.random() * 40));
+let data = Array.from({length: 100000}, () => Math.floor(Math.random() * 40));
 
 console.log(mergeSort(data))
