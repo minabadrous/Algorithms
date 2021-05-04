@@ -1,5 +1,4 @@
 function staircase(n) {
-    // Write your code here
     let res = '';
     
     for(let i=0; i<n; i++){

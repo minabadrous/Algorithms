@@ -1,5 +1,4 @@
 function compareTriplets(a, b) {
-    // Write your code here
     let res = [0, 0];
     
     for(let i=0; i<a.length; i++){
