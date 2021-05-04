@@ -8,3 +8,5 @@ function diagonalDifference(arr) {
     
     return Math.abs( first - second )
 }
+
+// Given a square matrix, calculate the absolute difference between the sums of its diagonals.
