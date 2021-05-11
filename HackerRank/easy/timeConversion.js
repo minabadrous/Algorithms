@@ -10,7 +10,3 @@ function timeConversion(s) {
 }
 
 console.log(timeConversion('06:40:03AM'))
-
-// 12AM -> 00
-// PM && !== 12 -> +12
-// 
