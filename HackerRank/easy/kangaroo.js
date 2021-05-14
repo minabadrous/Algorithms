@@ -6,7 +6,6 @@ function kangaroo(x1, v1, x2, v2) {
     : kangaroo(x1+v1, v1, x2+v2, v2)
 }
 
-console.log(kangaroo(43, 2, 70, 2))
 
 /*
  * Complete the 'kangaroo' function below.

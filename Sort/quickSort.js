@@ -21,4 +21,4 @@ const quickSort = arr => {
     return quickSort(left).concat(arr[nbi - 1]).concat(quickSort(right));
 }
 
-console.log('\nresult:', quickSort([3, 4, 1, 5, 6, 20, 2, 7, 9]));
+console.log( quickSort([3, 4, 1, 5, 6, 20, 2, 7, 9]) );
