@@ -1,8 +1,6 @@
 const quickSort = arr => {
-    if( arr.length === 1 ) return arr[0];
-    else if(arr.length === 0) return [];
+    if( arr.length <= 1 ) return arr;
 
-    let pivot = 0;
     let nbi = 1;
     let compared = 1;
 
@@ -16,12 +14,11 @@ const quickSort = arr => {
         compared++;
     }
 
-    [arr[nbi-1], arr[pivot]] = [arr[pivot], arr[nbi-1]];
+    [arr[nbi-1], arr[0]] = [arr[0], arr[nbi-1]];
 
-    let left = quickSort(arr.slice(0, nbi-1));
-    let right = quickSort(arr.slice(nbi));
-
-    return [left , arr[nbi - 1], right].reduce((acc, val) => acc.concat(val), []);
+    let left = arr.slice(0, nbi-1);
+    let right = arr.slice(nbi);
+    return quickSort(left).concat(arr[nbi - 1]).concat(quickSort(right));
 }
 
-console.log('\nresult:', quickSort([3, 4, 1, 5, 6, 4, 2, 7, 9]));
+console.log('\nresult:', quickSort([3, 4, 1, 5, 6, 20, 2, 7, 9]));
