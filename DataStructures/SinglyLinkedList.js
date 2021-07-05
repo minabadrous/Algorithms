@@ -72,6 +72,22 @@ class SinglyLinkedList {
     this.head = newNode;
     this.length++;
   }
+
+  get(index) {
+    if(index > this.length || index < 0) return null;
+
+    let current = this.head;
+    while(index > 0) {
+      current = current.next;
+      index--;
+    }
+    return current;
+  }
+
+  set(index, val) {
+    this.get(index).val = val;
+    return this.get(index);
+  }
 }
 
 let first = new SinglyLinkedList();
@@ -80,6 +96,5 @@ first.push("hello world");
 first.push("I am here");
 first.push("where are you");
 
-first.shift();
 
-console.log(first);
+console.log(first)
